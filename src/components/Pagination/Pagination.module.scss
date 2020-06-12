@@ -1,0 +1,77 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .pButton {
+    cursor: pointer;
+    margin-top: 4px;
+
+    &:first-child {
+      margin-right: 32px;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:last-child {
+      margin-left: 32px;
+    }
+  }
+
+  > span {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #586069;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+
+    &.current {
+      background: #282c34;
+      color: white;
+      font-family: "Qanelas SemiBold", sans-serif;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .pagination {
+    .pButton {
+      &:first-child {
+        margin-right: 24px;
+      }
+
+      &:last-child {
+        margin-left: 24px;
+      }
+    }
+
+    > span {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pagination {
+    .pButton {
+      &:first-child {
+        margin-right: 12px;
+      }
+
+      &:last-child {
+        margin-left: 12px;
+      }
+    }
+
+    > span {
+      width: 35px;
+      height: 35px;
+      font-size: 16px;
+    }
+  }
+}

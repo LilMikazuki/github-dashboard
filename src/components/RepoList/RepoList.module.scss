@@ -1,0 +1,197 @@
+.repoList {
+  width: 80vw;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 40px 150px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #586069;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+
+        .info {
+          display: flex;
+
+          > span {
+            margin-right: 16px;
+          }
+
+          .stars {
+            display: flex;
+            align-items: center;
+
+            svg {
+              fill: #586069;
+            }
+          }
+        }
+      }
+
+      .name {
+        cursor: pointer;
+        font-family: "Qanelas SemiBold", sans-serif;
+        color: #282c34;
+        text-decoration: none;
+        text-align: start;
+        font-size: 22px;
+      }
+
+      .lastCommit {
+        font-size: 18px;
+        margin-top: 4px;
+        text-align: start;
+      }
+
+      .stars {
+        width: fit-content;
+        font-size: 18px;
+
+        svg {
+          margin-right: 4px;
+          width: 15px;
+          height: 15px;
+        }
+
+        span {
+          width: fit-content;
+          margin: 0;
+        }
+      }
+
+      .link {
+        justify-self: end;
+
+        svg {
+          fill: #282c34;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .repoList {
+    width: 60%;
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .repoList {
+    display: grid;
+    width: 100%;
+    grid-gap: 32px;
+    margin-bottom: 48px;
+
+    li {
+      .item {
+        > div {
+
+          .info {
+            justify-content: space-between;
+
+            .stars {
+              font-size: 17px;
+
+              svg {
+                width: 13px;
+                height: 13px;
+              }
+            }
+          }
+        }
+
+        .name {
+          font-size: 22px;
+          margin-bottom: 4px;
+        }
+
+        .lastCommit {
+          font-size: 17px;
+        }
+
+        a {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .repoList {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 1px;
+          background: rgb(241, 232, 221);
+          position: absolute;
+          bottom: -12px;
+          left: 0;
+        }
+      }
+
+      font-size: 15px;
+
+      .item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #586069;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+
+          .info {
+            margin-top: 4px;
+
+            span {
+              margin-right: 16px;
+            }
+
+            .stars {
+              display: flex;
+              align-items: center;
+
+              svg {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+
+        .name {
+          font-size: 18px;
+        }
+
+        .lastCommit {
+          white-space: nowrap;
+        }
+
+        .link {
+          justify-self: end;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Qanelas SemiBold';
+  src: url('Qanelas-SemiBold.eot');
+  src: local('Qanelas SemiBold'), local('Qanelas-SemiBold'),
+  url('Qanelas-SemiBold.eot?#iefix') format('embedded-opentype'),
+  url('Qanelas-SemiBold.woff') format('woff'),
+  url('Qanelas-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Qanelas Light';
+  src: url('Qanelas-Light.eot');
+  src: local('Qanelas Light'), local('Qanelas-Light'),
+  url('Qanelas-Light.eot?#iefix') format('embedded-opentype'),
+  url('Qanelas-Light.woff') format('woff'),
+  url('Qanelas-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Qanelas Regular';
+  src: url('Qanelas-Regular.eot');
+  src: local('Qanelas Regular'), local('Qanelas-Regular'),
+  url('Qanelas-Regular.eot?#iefix') format('embedded-opentype'),
+  url('Qanelas-Regular.woff') format('woff'),
+  url('Qanelas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

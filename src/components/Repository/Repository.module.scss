@@ -1,0 +1,385 @@
+.repository {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  background: white;
+  padding: 40px;
+
+  .header {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+
+    .backButton {
+      width: fit-content;
+
+      > svg {
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    .name {
+      justify-self: center;
+      margin: auto;
+      font-family: "Qanelas SemiBold", sans-serif;
+      font-size: 28px;
+    }
+
+    .stars {
+      display: flex;
+      align-items: center;
+      justify-self: flex-end;
+      font-size: 26px;
+      margin-bottom: 16px;
+
+      svg {
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .lastCommitDate {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      flex-basis: 100%;
+      font-size: 20px;
+    }
+  }
+
+  h4 {
+    font-family: "Qanelas SemiBold", sans-serif;
+    font-size: 26px;
+    margin: 0 0 24px 0;
+  }
+
+  .block {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .author {
+    flex-direction: column;
+
+
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 120px;
+        height: 120px;
+        margin-right: 32px;
+      }
+
+      a {
+        font-size: 26px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .description {
+    flex-direction: column;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .language {
+    font-size: 24px;
+    margin: 24px 0;
+
+    span {
+      font-family: "Qanelas SemiBold", sans-serif;
+      margin-right: 8px;
+    }
+  }
+
+  .contributors {
+    flex-direction: column;
+    width: fit-content;
+    max-width: 70%;
+    margin: 0 auto;
+
+    h4 {
+      margin-top: 18px;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0 120px;
+      margin: 0;
+      padding: 0 20px;
+      width: fit-content;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        box-sizing: border-box;
+        position: relative;
+        font-size: 20px;
+        margin: 16px 0;
+
+        > div {
+          display: inline-flex;
+          width: fit-content;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          span {
+            text-align: start;
+          }
+
+          span:first-child {
+            font-family: "Qanelas SemiBold", sans-serif;
+            margin-bottom: 4px;
+          }
+
+          span:last-child {
+            font-size: 0.9em;
+
+            &::after {
+              content: ' contributions';
+            }
+          }
+        }
+
+        &:first-child {
+          margin-top: 0
+        }
+
+        a {
+          width: fit-content;
+          justify-self: end;
+          margin-left: 16px;
+          outline: none;
+          user-select: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .repository {
+    ul {
+      li {
+        &.th {
+          display: none;
+        }
+
+        display: flex;
+        flex-direction: column;
+
+        span:nth-child(2) {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .repository {
+    padding: 32px 20px;
+    font-size: 24px;
+
+    .header {
+      grid-gap: 8px;
+
+      .backButton > svg {
+        width: 26px;
+        height: 26px;
+      }
+
+      .name {
+        font-size: 26px;
+      }
+
+      .stars {
+        font-size: 20px;
+
+        svg {
+          margin-right: 4px;
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      .lastCommitDate {
+        margin-top: 16px;
+        font-size: 20px;
+      }
+    }
+
+    h4 {
+      font-family: "Qanelas SemiBold", sans-serif;
+      font-size: 26px;
+      margin: 0 0 16px 0;
+    }
+
+    .block {
+      margin-bottom: 24px;
+    }
+
+    .author {
+      margin-top: 40px;
+
+      .avatar {
+        img {
+          width: 90px;
+          height: 90px;
+          margin-right: 32px;
+        }
+      }
+    }
+
+    .description {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .language {
+      margin: 24px 0;
+    }
+
+    .contributors {
+      margin-bottom: 0;
+      max-width: 80%;
+
+      h4 {
+        margin: 20px 0 40px 0;
+      }
+
+      ul {
+        margin: 0;
+        grid-gap: 0 75px;
+
+        li {
+          margin: 14px 0;
+          font-size: 18px;
+
+          a svg {
+            margin-left: 8px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .repository {
+    padding: 32px 20px;
+    font-size: 24px;
+
+    .header {
+      grid-gap: 8px;
+
+      .backButton > svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .name {
+        font-size: 24px;
+      }
+
+      .stars {
+        font-size: 18px;
+
+        svg {
+          margin-right: 4px;
+        }
+      }
+
+      .lastCommitDate {
+        margin-top: 16px;
+        font-size: 18px;
+      }
+    }
+
+    h4 {
+      font-family: "Qanelas SemiBold", sans-serif;
+      font-size: 24px;
+      margin: 0 0 16px 0;
+    }
+
+    .block {
+      margin-bottom: 32px;
+    }
+
+    .author {
+      margin-top: 32px;
+
+      .avatar {
+        img {
+          width: 70px;
+          height: 70px;
+          margin-right: 24px;
+        }
+      }
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    .language {
+      margin: 24px 0;
+    }
+
+    .contributors {
+      max-width: 100%;
+
+      h4 {
+        margin-top: 12px;
+      }
+
+      ul {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+
+        li {
+          grid-template-columns: 1.5fr 1fr 40px;
+          margin: 12px 0;
+          font-size: 16px;
+
+          a svg {
+            margin-left: 8px;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

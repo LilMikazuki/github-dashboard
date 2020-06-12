@@ -1,0 +1,176 @@
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40px;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .title {
+      font-size: 28px;
+      margin: 0;
+      font-family: Qanelas, "Qanelas SemiBold", sans-serif;
+    }
+
+    .search {
+      position: relative;
+      width: 40vw;
+
+      svg {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        fill: rgba(21, 21, 21, 0.5)
+      }
+
+      input {
+        border-radius: 4px;
+        padding: 16px 40px 16px 16px;
+        box-sizing: border-box;
+        background: #fff;
+        border: 1px solid rgb(241, 232, 221);
+        transition: .3s;
+        font-size: 20px;
+        width: 100%;
+
+
+        &:hover, &:focus {
+          border: 1px solid #7289da;
+        }
+      }
+    }
+  }
+
+  .noResults {
+    display: none;
+  }
+
+  .searchResultsTitle {
+    //width: 100%;
+    text-align: start;
+    font-size: 26px;
+    margin: 40px 0;
+
+    & + div {
+      //align-self: start;
+    }
+  }
+
+  ul {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .mainPage {
+    .header {
+      .title {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      & + div {
+        margin-top: 40px;
+      }
+    }
+
+    .noResults {
+      margin: 40px 0;
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .mainPage {
+    .header {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+
+      .title {
+        order: 1;
+        font-size: 24px;
+      }
+
+      .search {
+        order: 0;
+        flex-basis: 60%;
+
+        input {
+          width: 100%;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .searchResultsTitle {
+      font-size: 22px;
+      margin: 24px 0;
+    }
+
+    ul {
+      margin-top: 32px;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .mainPage ul + div {
+    display: none
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .mainPage {
+    padding: 20px 20px 40px 20px;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        order: 0;
+        font-size: 24px;
+        margin-bottom: 32px;
+      }
+
+      .search {
+        order: 1;
+        width: 100%;
+        margin-bottom: 24px;
+
+        svg {
+          width: 15px;
+          height: 15px;
+        }
+
+        input {
+          width: 100%;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .noResults {
+      width: 100%;
+    }
+
+    ul {
+      margin: 24px 0;
+    }
+  }
+}
