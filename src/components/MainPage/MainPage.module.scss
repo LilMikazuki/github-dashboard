@@ -4,14 +4,15 @@
   align-items: center;
   box-sizing: border-box;
   padding: 40px;
-
   width: 100vw;
+  max-width: 1280px;
+  margin: 0 auto;
   min-height: 100vh;
 
   .header {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 
@@ -24,6 +25,7 @@
     .search {
       position: relative;
       width: 40vw;
+      max-width: 600px;
 
       svg {
         position: absolute;
@@ -56,14 +58,9 @@
   }
 
   .searchResultsTitle {
-    //width: 100%;
     text-align: start;
     font-size: 26px;
     margin: 40px 0;
-
-    & + div {
-      //align-self: start;
-    }
   }
 
   ul {
@@ -74,13 +71,6 @@
 @media screen and (min-width: 1024px) {
   .mainPage {
     .header {
-      .title {
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-
       & + div {
         margin-top: 40px;
       }
@@ -93,7 +83,7 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1023px) {
   .mainPage {
     .header {
       width: 100%;
@@ -134,7 +124,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .mainPage {
     padding: 20px 20px 40px 20px;
 

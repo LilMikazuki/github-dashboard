@@ -81,18 +81,26 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .repoList {
-    width: 60%;
-    max-width: unset;
+    position: relative;
+
+    &::after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      background: rgb(241, 232, 221);
+    }
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1023px) {
   .repoList {
     display: grid;
     width: 100%;
-    grid-gap: 32px;
     margin-bottom: 48px;
 
     li {
@@ -101,9 +109,10 @@
 
           .info {
             justify-content: space-between;
+            font-size: 16px;
 
             .stars {
-              font-size: 17px;
+              font-size: 16px;
 
               svg {
                 width: 13px;
@@ -119,7 +128,7 @@
         }
 
         .lastCommit {
-          font-size: 17px;
+          font-size: 16px;
         }
 
         a {
@@ -130,7 +139,13 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .repoList {
+    grid-gap: 32px 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .repoList {
     display: flex;
     flex-direction: column;

@@ -169,10 +169,6 @@
           }
         }
 
-        &:first-child {
-          margin-top: 0
-        }
-
         a {
           width: fit-content;
           justify-self: end;
@@ -204,7 +200,7 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1023px) {
   .repository {
     padding: 32px 20px;
     font-size: 24px;
@@ -295,7 +291,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 767px) {
   .repository {
     padding: 32px 20px;
     font-size: 24px;
